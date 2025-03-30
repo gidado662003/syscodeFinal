@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Page = () => {
   const { items } = useParams();
-  const itData = items ? data[items as string] : null;
+  const itData = items && (data[items as keyof typeof data] || null);
 
   if (!itData) {
     return (
