@@ -10,6 +10,10 @@ type FormData = {
   state: string;
 };
 
+type SpecialService = EnterpriseService & {
+  type: "special";
+};
+
 const isSpecialService = (
   service: EnterpriseService
 ): service is SpecialService => {
